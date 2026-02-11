@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -31,15 +32,16 @@ namespace WDFClient
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             client = new TcpClient();
-            await client.ConnectAsync(IPAddress.Parse("192.168.43.24"), 5000);
+            await client.ConnectAsync(IPAddress.Parse("10.10.117.211"), 5000);
             stream = client.GetStream();
-            await Send_message();
+            string message = "Hello from client!";
+            await Send_message(message);
 
         }
 
-        public async Task Send_message()
+        public async Task Send_message(string message)
         {
-            string message = "Hello from client!";
+            //string message = "Hello from client!";
             byte[] data = Encoding.UTF8.GetBytes(message);
 
             await stream.WriteAsync(data, 0, data.Length);
@@ -53,9 +55,30 @@ namespace WDFClient
             // The input data is in bytes so we must convert it to
             //    a string to use it.
             string response = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-            Worddisplay.Content = response;
+            string[] info;
+            info = response.Split('|');
+            if (info[1] == "Found")
+            {
+                FoundBox.Text = info[0];
+            }
+            else if(info[1] == "Jumble")
+            {
+                Worddisplay.Content = info[0];
+            }
+                
             // Console.WriteLine($"Server replied: {response}");
 
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private async void Guess_Click(object sender, RoutedEventArgs e)
+        {
+            string guess = GuessBox.Text;
+            await Send_message(guess);
         }
     }
 }

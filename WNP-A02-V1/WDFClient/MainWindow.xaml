@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Name="Worddisplay" Content="Word&#xD;&#xA;" HorizontalAlignment="Left" Margin="245,36,0,0" VerticalAlignment="Top" Width="304" HorizontalContentAlignment="Center" Height="28"/>
+        <Label Name="Worddisplay" Content="Word&#xD;&#xA;" HorizontalAlignment="Left" Margin="245,36,0,0" VerticalAlignment="Top" Width="304" HorizontalContentAlignment="Center" Height="28" FontSize="16"/>
+        <TextBox Name ="GuessBox"  HorizontalAlignment="Left" Margin="182,105,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="316" Height="29" TextChanged="TextBox_TextChanged" FontSize="16"/>
+        <Button Content="Guess" HorizontalAlignment="Left" Margin="570,105,0,0" VerticalAlignment="Top" Height="29" Width="77" Click="Guess_Click"/>
+        
+        <TextBox Name = "FoundBox"  HorizontalAlignment="Left" Margin="130,181,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Height="36"/>
 
     </Grid>
 </Window>

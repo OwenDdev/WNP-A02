@@ -5,6 +5,7 @@
 //
 
 using System;
+using System.ComponentModel.Design;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection.PortableExecutable;
@@ -18,12 +19,13 @@ namespace WNPA02V1
 {
     class WNPA02V1
     {
+        private static string[] data = new string[16];
         public static async Task Main()
         {
             string[] response;
             response = ReadFileAsync();
             // Create the TcpListener and start it
-            TcpListener listener = new TcpListener(IPAddress.Parse("192.168.43.24"), 5000);
+            TcpListener listener = new TcpListener(IPAddress.Parse("10.10.117.211"), 5000);
             listener.Start();
             Console.WriteLine("Server started on port 5000");
 
@@ -35,12 +37,14 @@ namespace WNPA02V1
             while (true)
             {
                 TcpClient client = await listener.AcceptTcpClientAsync();
-                Task task = HandleClientAsync(client, response[0]);
+
+                
+                Task task = HandleClientAsync(client);
             }
         }
 
         // The client handler handles the request
-        private static async Task HandleClientAsync(TcpClient client, string Response)
+        private static async Task HandleClientAsync(TcpClient client)
         {
             Console.WriteLine("Client connected");
 
@@ -51,32 +55,68 @@ namespace WNPA02V1
             // Need a buffer for the input
             byte[] buffer = new byte[1024];
 
-            int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
 
-            // Remember, the data over TCP/IP is in bytes, so the stream
-            //    must be converted to a string so you can use it.
-            string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+            while (true)
+            {
+                int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
 
-            Console.WriteLine($"Received: {message}");
+                // Remember, the data over TCP/IP is in bytes, so the stream
+                //    must be converted to a string so you can use it.
+                //string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+                string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
 
-            // The data must be converted to a byte array to be used
-            //    by TCP/IP
-            string response = Response;
-            byte[] responseBytes = Encoding.UTF8.GetBytes(response);
+                Console.WriteLine($"Received: {message}");
 
-            await stream.WriteAsync(responseBytes, 0, responseBytes.Length);
-            Console.WriteLine("Response sent");
+                int code = determine_response(message);
 
+                // The data must be converted to a byte array to be used
+                //    by TCP/IP
+
+                string info;
+                if (code == 0){
+                    info = "|Jumble";
+                }
+                else
+                {
+                    info = "|Found";
+                }
+               string response = data[code] + info;
+                byte[] responseBytes = Encoding.UTF8.GetBytes(response);
+
+                await stream.WriteAsync(responseBytes, 0, responseBytes.Length);
+                Console.WriteLine("Response sent");
+            }
+            //later on we cn specify which client disconnected here 
+            Console.WriteLine("Client disconnected");
             client.Close();
         }
 
+
+        private static int determine_response(string message)
+        {
+            int code = 0;
+            if (message == "Hello from client!")
+            {
+                code = 0;
+            }
+            else
+            {
+                for (int i = 2; i < 15; i++)
+                {
+                    if (message == data[i] ) {
+                        code = i;
+                    }
+                }
+            }
+             return code;
+        }
 
 
         private static string[] ReadFileAsync()
         {
             string line;
             string filepath = @"E:\SRC\WNP\WNP-A02\WNP-A02\WNP-A02-V1\WNP-A02-V1\GameData\data01.txt";
-            string[] data = new string[16];
+            // string[] data = new string[16];
 
             using StreamReader sr = new StreamReader(filepath);
 
