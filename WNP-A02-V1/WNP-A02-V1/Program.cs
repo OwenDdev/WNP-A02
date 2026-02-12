@@ -19,7 +19,7 @@ namespace WNPA02V1
             string[] response;
             response = ReadFileAsync();
             // Create the TcpListener and start it
-            TcpListener listener = new TcpListener(IPAddress.Parse("10.144.110.236"), 5000);
+            TcpListener listener = new TcpListener(IPAddress.Parse("10.144.107.128"), 5000);
             listener.Start();
             Console.WriteLine("Server started on port 5000");
 

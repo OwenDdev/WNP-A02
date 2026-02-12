@@ -26,6 +26,7 @@ namespace WDFClient
 
         private Random rnd = new Random();
         private Label[] guessLabels;
+        private Label[] guessLabels2;
 
         private int TotalFound = 0;
 
@@ -36,12 +37,14 @@ namespace WDFClient
             Loaded += GameWindow_Loaded;
 
             guessLabels = new Label[] { Guess1, Guess2, Guess3, Guess4, Guess5, Guess6, Guess7, Guess8, Guess9, Guess10 };
+            guessLabels2 = new Label[] { Guess11, Guess12, Guess13, Guess14, Guess15, Guess16, Guess17, Guess18, Guess19, Guess20, Guess21, Guess22, Guess23, Guess24, Guess25, Guess26, Guess27, Guess28, Guess29, Guess30 };
+        
         }
 
-        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private async void GameWindow_Loaded(object sender, RoutedEventArgs e)
         {
             client = new TcpClient();
-            await client.ConnectAsync(IPAddress.Parse("10.144.110.236"), 5000);
+            await client.ConnectAsync(IPAddress.Parse("10.144.107.128"), 5000);
             stream = client.GetStream();
             string message = "Hello from client!";
             await Send_message(message);
@@ -76,10 +79,16 @@ namespace WDFClient
             else if (info[2] == "Jumble")
             {
                 int.TryParse(info[1], out TotalFound);
-                if (TotalFound >= 10)
+                if (TotalFound <= 10)
                 {
                     GuessSpace10.Visibility = Visibility.Visible;
                     GuessSpace10.IsEnabled = true;
+
+                }
+                else if (TotalFound <= 20 && TotalFound > 10)
+                {
+                    GuessSpace20.Visibility = Visibility.Visible;
+                    GuessSpace20.IsEnabled = true;
 
                 }
                 Worddisplay.Content = info[0];
@@ -108,12 +117,25 @@ namespace WDFClient
                 //Random rnd = new Random();
                 int labelnumber = rnd.Next(0, totalFound);
 
-                selectedLabel = guessLabels[labelnumber];
-                if (selectedLabel.Content.ToString() == "???")
+                if (TotalFound <= 10)
                 {
-                    selectedLabel.Content = wordFound;
-                    filled = true;
+                    selectedLabel = guessLabels[labelnumber];
+                    if (selectedLabel.Content.ToString() == "???")
+                    {
+                        selectedLabel.Content = wordFound;
+                        filled = true;
+                    }
                 }
+                else if (TotalFound <= 20 && TotalFound >10)
+                {
+                    selectedLabel = guessLabels2[labelnumber];
+                    if (selectedLabel.Content.ToString() == "???")
+                    {
+                        selectedLabel.Content = wordFound;
+                        filled = true;
+                    }
+                }
+
             }
         }
 

@@ -8,7 +8,7 @@
         Title="GameWindow" Height="450" Width="800">
     <Grid>
         <Label Name="Worddisplay" Content="Word&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Width="316" HorizontalContentAlignment="Center" Height="28" FontSize="16"/>
-        <TextBox Name ="GuessBox"  HorizontalAlignment="Left" Margin="182,105,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="316" Height="29" TextChanged="TextBox_TextChanged" FontSize="16"/>
+        <TextBox Name ="GuessBox"  HorizontalAlignment="Left" Margin="182,105,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="316" Height="29" FontSize="16"/>
         <Button Content="Guess" HorizontalAlignment="Left" Margin="570,105,0,0" VerticalAlignment="Top" Height="29" Width="77" Click="Guess_Click"/>
 
         <TextBox Name = "FoundBox"  HorizontalAlignment="Left" Margin="38,102,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="119" Height="32"/>
@@ -28,8 +28,37 @@
             <Label Name ="Guess10" Content="???" HorizontalAlignment="Left" Margin="413,147,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
 
         </Grid>
+
+        <Grid Margin="115,162,115,45" Name ="GuessSpace20" Visibility="Hidden" IsEnabled="false" >
+
+            <Label Name ="Guess11" Content="???" HorizontalAlignment="Left" Margin="94,23,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess12" Content="???" HorizontalAlignment="Left" Margin="226,20,0,0" VerticalAlignment="Top" Width="58" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess13" Content="???" HorizontalAlignment="Left" Margin="350,23,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess14" Content="???" HorizontalAlignment="Left" Margin="483,23,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+
+            <Label Name ="Guess15" Content="???" HorizontalAlignment="Left" Margin="94,114,0,0" VerticalAlignment="Top" Width="58" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess16" Content="???" HorizontalAlignment="Left" Margin="227,114,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess17" Content="???" HorizontalAlignment="Left" Margin="483,114,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess18" Content="???" HorizontalAlignment="Left" Margin="95,165,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+
+            <Label Name ="Guess19" Content="???" HorizontalAlignment="Left" Margin="226,168,0,0" VerticalAlignment="Top" Width="58" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess20" Content="???" HorizontalAlignment="Left" Margin="342,165,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess21" Content="???" HorizontalAlignment="Left" Margin="342,117,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess22" Content="???" HorizontalAlignment="Left" Margin="475,165,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+
+            <Label Name ="Guess23" Content="???" HorizontalAlignment="Left" Margin="235,58,0,0" VerticalAlignment="Top" Width="58" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess24" Content="???" HorizontalAlignment="Left" Margin="350,58,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess25" Content="???" HorizontalAlignment="Left" Margin="483,58,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess26" Content="???" HorizontalAlignment="Left" Margin="103,58,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess30" Content="???" HorizontalAlignment="Left" Margin="-5,26,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess27" Content="???" HorizontalAlignment="Left" Margin="-5,117,0,0" VerticalAlignment="Top" Width="58" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess28" Content="???" HorizontalAlignment="Left" Margin="-4,168,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+            <Label Name ="Guess29" Content="???" HorizontalAlignment="Left" Margin="4,61,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
+
+
+        </Grid>
         <Label x:Name="ScoreLabel" Content="Score" HorizontalAlignment="Left" Margin="608,22,0,0" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Center" Height="28" FontSize="16"/>
         <Label x:Name="Scoredisplay" Content="0/0" HorizontalAlignment="Left" Margin="608,55,0,0" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Center" Height="28" FontSize="16"/>
-       
+
     </Grid>
 </Window>

@@ -7,28 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Name="Worddisplay" Content="Word&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Width="316" HorizontalContentAlignment="Center" Height="28" FontSize="16"/>
-        <TextBox Name ="GuessBox"  HorizontalAlignment="Left" Margin="182,105,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="316" Height="29" TextChanged="TextBox_TextChanged" FontSize="16"/>
-        <Button Content="Guess" HorizontalAlignment="Left" Margin="570,105,0,0" VerticalAlignment="Top" Height="29" Width="77" Click="Guess_Click"/>
+        <Label Name ="GameLabel"  Content="SET Jumble" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Width="316" HorizontalContentAlignment="Center" Height="28" FontSize="16"/>
+        <Button Name ="PlayBtn" Content="Play" HorizontalAlignment="Center" Margin="0,144,0,0" VerticalAlignment="Top" Height="29" Width="210" Click="Play_Click"/>
+        <Button Name ="QuitBtn"  Content="Quit" HorizontalAlignment="Center" Margin="0,233,0,0" VerticalAlignment="Top" Height="29" Width="210" Click="Quit_Click"/>
 
-        <TextBox Name = "FoundBox"  HorizontalAlignment="Left" Margin="38,102,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="119" Height="32"/>
-        <Grid Margin="115,162,115,45" Name ="GuessSpace10" Visibility="Hidden" IsEnabled="false" >
+        <Label Name ="Loginlabel" Content="Login" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Width="316" HorizontalContentAlignment="Center" Height="28" FontSize="16" Visibility="Hidden"/>
+        <Button Name ="LoginBtn" Content="Login" HorizontalAlignment="Left" Margin="510,144,0,0" VerticalAlignment="Top" Height="29" Width="85" Click="Login_Click" Visibility="Hidden"/>
+        <Button Name ="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="636,144,0,0" VerticalAlignment="Top" Height="29" Width="85" Click="Back_Click" Visibility="Hidden"/>
+        <TextBox Name ="LoginBox" HorizontalAlignment="Left" Margin="122,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="319" Height="29" Visibility="Hidden"/>
 
-            <Label Name ="Guess1" Content="???" HorizontalAlignment="Left" Margin="103,23,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
-            <Label Name ="Guess2" Content="???" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" Width="58" Height="30" HorizontalContentAlignment="Center"/>
-            <Label Name ="Guess3" Content="???" HorizontalAlignment="Left" Margin="413,23,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
 
-            <Label Name ="Guess4" Content="???" HorizontalAlignment="Left" Margin="55,84,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
-            <Label Name ="Guess5" Content="???" HorizontalAlignment="Left" Margin="184,84,0,0" VerticalAlignment="Top" Width="58" Height="30" HorizontalContentAlignment="Center"/>
-            <Label Name ="Guess6" Content="???" HorizontalAlignment="Left" Margin="342,81,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
-            <Label Name ="Guess7" Content="???" HorizontalAlignment="Left" Margin="483,81,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
-
-            <Label Name ="Guess8" Content="???" HorizontalAlignment="Left" Margin="103,150,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
-            <Label Name ="Guess9" Content="???" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Width="58" Height="30" HorizontalContentAlignment="Center"/>
-            <Label Name ="Guess10" Content="???" HorizontalAlignment="Left" Margin="413,147,0,0" VerticalAlignment="Top" Width="57" Height="30" HorizontalContentAlignment="Center"/>
-
-        </Grid>
-        <Label x:Name="ScoreLabel" Content="Score" HorizontalAlignment="Left" Margin="608,22,0,0" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Center" Height="28" FontSize="16"/>
-        <Label x:Name="Scoredisplay" Content="0/0" HorizontalAlignment="Left" Margin="608,55,0,0" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Center" Height="28" FontSize="16"/>
     </Grid>
 </Window>

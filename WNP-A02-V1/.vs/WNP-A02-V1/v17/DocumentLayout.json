@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wdfclient\\gamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|solutionrelative:wdfclient\\gamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wdfclient\\gamewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|solutionrelative:wdfclient\\gamewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wdfclient\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|solutionrelative:wdfclient\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1E422B2-74C0-4914-AF86-DA557DABE246}|WNP-A02-V1\\WNP-A02-V1.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wnp-a02-v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1E422B2-74C0-4914-AF86-DA557DABE246}|WNP-A02-V1\\WNP-A02-V1.csproj|solutionrelative:wnp-a02-v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wdfclient\\gamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|solutionrelative:wdfclient\\gamewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1E422B2-74C0-4914-AF86-DA557DABE246}|WNP-A02-V1\\WNP-A02-V1.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wnp-a02-v1\\gamedata\\data01.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F1E422B2-74C0-4914-AF86-DA557DABE246}|WNP-A02-V1\\WNP-A02-V1.csproj|solutionrelative:wnp-a02-v1\\gamedata\\data01.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wdfclient\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|solutionrelative:wdfclient\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wdfclient\\gamewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DDA3E421-70D6-40C0-8881-CB0CE8131817}|WDFClient\\WDFClient.csproj|solutionrelative:wdfclient\\gamewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1E422B2-74C0-4914-AF86-DA557DABE246}|WNP-A02-V1\\WNP-A02-V1.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wnp-a02-v1\\gamedata\\data01.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{F1E422B2-74C0-4914-AF86-DA557DABE246}|WNP-A02-V1\\WNP-A02-V1.csproj|solutionrelative:wnp-a02-v1\\gamedata\\data01.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{F1E422B2-74C0-4914-AF86-DA557DABE246}|WNP-A02-V1\\WNP-A02-V1.csproj|e:\\src\\wnp\\wnp-a02\\wnp-a02\\wnp-a02-v1\\wnp-a02-v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1E422B2-74C0-4914-AF86-DA557DABE246}|WNP-A02-V1\\WNP-A02-V1.csproj|solutionrelative:wnp-a02-v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,17 +34,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WDFClient\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WDFClient\\MainWindow.xaml",
+              "ToolTip": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WDFClient\\MainWindow.xaml",
+              "RelativeToolTip": "WDFClient\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-12T16:30:23.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "GameWindow.xaml.cs",
               "DocumentMoniker": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WDFClient\\GameWindow.xaml.cs",
               "RelativeDocumentMoniker": "WDFClient\\GameWindow.xaml.cs",
               "ToolTip": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WDFClient\\GameWindow.xaml.cs",
               "RelativeToolTip": "WDFClient\\GameWindow.xaml.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAxwH8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAqwIAAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-11T23:47:15.158Z",
               "EditorCaption": ""
@@ -57,14 +69,14 @@
               "RelativeDocumentMoniker": "WDFClient\\MainWindow.xaml.cs",
               "ToolTip": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WDFClient\\MainWindow.xaml.cs",
               "RelativeToolTip": "WDFClient\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAAAH4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAADcAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-10T16:54:53.406Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "GameWindow.xaml",
               "DocumentMoniker": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WDFClient\\GameWindow.xaml",
               "RelativeDocumentMoniker": "WDFClient\\GameWindow.xaml",
@@ -76,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "data01.txt",
               "DocumentMoniker": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WNP-A02-V1\\GameData\\data01.txt",
               "RelativeDocumentMoniker": "WNP-A02-V1\\GameData\\data01.txt",
@@ -89,25 +101,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WDFClient\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "WDFClient\\MainWindow.xaml",
-              "ToolTip": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WDFClient\\MainWindow.xaml",
-              "RelativeToolTip": "WDFClient\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-10T16:51:45.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WNP-A02-V1\\Program.cs",
               "RelativeDocumentMoniker": "WNP-A02-V1\\Program.cs",
               "ToolTip": "E:\\SRC\\WNP\\WNP-A02\\WNP-A02\\WNP-A02-V1\\WNP-A02-V1\\Program.cs",
               "RelativeToolTip": "WNP-A02-V1\\Program.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAYwEkAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-10T15:57:40.313Z",
               "EditorCaption": ""

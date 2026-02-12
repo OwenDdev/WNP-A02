@@ -19,3 +19,5 @@ E:\SRC\WNP\WNP-A02\WNP-A02\WNP-A02-V1\WDFClient\obj\Debug\net8.0-windows\refint\
 E:\SRC\WNP\WNP-A02\WNP-A02\WNP-A02-V1\WDFClient\obj\Debug\net8.0-windows\WDFClient.pdb
 E:\SRC\WNP\WNP-A02\WNP-A02\WNP-A02-V1\WDFClient\obj\Debug\net8.0-windows\WDFClient.genruntimeconfig.cache
 E:\SRC\WNP\WNP-A02\WNP-A02\WNP-A02-V1\WDFClient\obj\Debug\net8.0-windows\ref\WDFClient.dll
+E:\SRC\WNP\WNP-A02\WNP-A02\WNP-A02-V1\WDFClient\obj\Debug\net8.0-windows\GameWindow.g.cs
+E:\SRC\WNP\WNP-A02\WNP-A02\WNP-A02-V1\WDFClient\obj\Debug\net8.0-windows\GameWindow.baml
