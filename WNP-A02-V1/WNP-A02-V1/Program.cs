@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.ComponentModel.Design.Serialization;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection.PortableExecutable;
@@ -19,7 +20,7 @@ namespace WNPA02V1
             string[] response;
             response = ReadFileAsync();
             // Create the TcpListener and start it
-            TcpListener listener = new TcpListener(IPAddress.Parse("10.144.107.128"), 5000);
+            TcpListener listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 5000);
             listener.Start();
             Console.WriteLine("Server started on port 5000");
 
@@ -110,7 +111,8 @@ namespace WNPA02V1
         private static string[] ReadFileAsync()
         {
             string line;
-            string filepath = @"E:\SRC\WNP\WNP-A02\WNP-A02\WNP-A02-V1\WNP-A02-V1\GameData\data01.txt";
+            string gamefile = RandomGameData();
+            string filepath = $@"C:\SRC\WNP-A02\WNP-A02-V1\WNP-A02-V1\GameData\{gamefile}";
             // string[] data = new string[16];
 
             using StreamReader sr = new StreamReader(filepath);
@@ -129,8 +131,8 @@ namespace WNPA02V1
 
 
             int i = 2;
-
-            while ((line = sr.ReadLine()) != null && i < 16)
+            //change hardcode 16 to data.Length for accpet other gamefile content
+            while ((line = sr.ReadLine()) != null && i < data.Length)
             {
                 data[i] = line;
                 i++;  // move to next index for next line
@@ -141,6 +143,17 @@ namespace WNPA02V1
             //Console.ReadLine();
             Console.WriteLine(data[0]);
             return data;
+        }
+
+        //Function:RandomGameData
+        //Dscription: chose one gamedata randomly
+        //Return: string, Game filename
+        private static string RandomGameData()
+        {
+            Random random = new Random();
+            int GameFileNumber = random.Next(1, 5);
+            string GameFileName = $"data{GameFileNumber.ToString("D2")}.txt";
+            return GameFileName;
         }
     }
 }

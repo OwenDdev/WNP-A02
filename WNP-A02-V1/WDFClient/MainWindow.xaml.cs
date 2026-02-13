@@ -44,7 +44,7 @@ namespace WDFClient
 
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)

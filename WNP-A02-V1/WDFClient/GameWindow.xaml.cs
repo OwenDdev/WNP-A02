@@ -44,7 +44,7 @@ namespace WDFClient
         private async void GameWindow_Loaded(object sender, RoutedEventArgs e)
         {
             client = new TcpClient();
-            await client.ConnectAsync(IPAddress.Parse("10.144.107.128"), 5000);
+            await client.ConnectAsync(IPAddress.Parse("127.0.0.1"), 5000);
             stream = client.GetStream();
             string message = "Hello from client!";
             await Send_message(message);
