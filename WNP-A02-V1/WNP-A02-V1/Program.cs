@@ -1,12 +1,5 @@
-﻿using System;
-using System.ComponentModel.Design;
-using System.ComponentModel.Design.Serialization;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
-using System.Reflection.PortableExecutable;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization.Formatters;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,11 +7,15 @@ namespace WNPA02V1
 {
     class WNPA02V1
     {
-        private static string[] data;
+        
+        //cna delete this line if don't need it-che ping
+        //private static string[] data;
         public static async Task Main()
         {
-            string[] response;
-            response = ReadFileAsync();
+            //also could delete this line if don't need it-che ping 
+            /*string[] response;
+            response = ReadFileAsync();*/
+
             // Create the TcpListener and start it
             TcpListener listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 5000);
             listener.Start();
@@ -32,8 +29,7 @@ namespace WNPA02V1
             while (true)
             {
                 TcpClient client = await listener.AcceptTcpClientAsync();
-
-                
+ 
                 Task task = HandleClientAsync(client);
             }
         }
@@ -42,6 +38,9 @@ namespace WNPA02V1
         private static async Task HandleClientAsync(TcpClient client)
         {
             Console.WriteLine("Client connected");
+            
+            //every client will get thier own random data without restart server 
+            string[] GameData = ReadFileAsync();
 
             // The using statement should be used to make communications
             //   easier.
@@ -53,33 +52,42 @@ namespace WNPA02V1
 
             while (true)
             {
-                int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
-
-                // Remember, the data over TCP/IP is in bytes, so the stream
-                //    must be converted to a string so you can use it.
-                //string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-
-                Console.WriteLine($"Received: {message}");
-
-                int code = determine_response(message);
-
-                // The data must be converted to a byte array to be used
-                //    by TCP/IP
-
-                string info;
-                if (code == 0){
-                    info = "|" + data[1] +"|Jumble";
-                }
-                else
+                try
                 {
-                    info = "|Found";
-                }
-               string response = data[code] + info;
-                byte[] responseBytes = Encoding.UTF8.GetBytes(response);
+                    int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
 
-                await stream.WriteAsync(responseBytes, 0, responseBytes.Length);
-                Console.WriteLine("Response sent");
+                    // Remember, the data over TCP/IP is in bytes, so the stream
+                    //    must be converted to a string so you can use it.
+                    //string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+                    string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+
+                    Console.WriteLine($"Received: {message}");
+
+                    int code = determine_response(message, GameData);
+
+                    // The data must be converted to a byte array to be used
+                    //    by TCP/IP
+
+                    string info;
+                    if (code == 0)
+                    {
+                        info = "|" + GameData[1] + "|Jumble";
+                    }
+                    else
+                    {
+                        info = "|Found";
+                    }
+                    string response = GameData[code] + info;
+                    byte[] responseBytes = Encoding.UTF8.GetBytes(response);
+
+                    await stream.WriteAsync(responseBytes, 0, responseBytes.Length);
+                    Console.WriteLine("Response sent");
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"Clinet Error: {ex.Message}");
+                    break;
+                }
             }
             //later on we cn specify which client disconnected here 
             Console.WriteLine("Client disconnected");
@@ -88,7 +96,7 @@ namespace WNPA02V1
 
         
 
-        private static int determine_response(string message)
+        private static int determine_response(string message, string[] Gamedata)
         {
             int code = 0;
             if (message == "Hello from client!")
@@ -97,9 +105,9 @@ namespace WNPA02V1
             }
             else
             {
-                for (int i = 2; i < 15; i++)
+                for (int i = 2; i < Gamedata.Length; i++)
                 {
-                    if (message == data[i] ) {
+                    if (message == Gamedata[i] ) {
                         code = i;
                     }
                 }
@@ -121,28 +129,29 @@ namespace WNPA02V1
             string Arraysize = sr.ReadLine();
 
             int size = int.Parse(Arraysize) + 2;
+            //create local array passed by gamedata 
+            string[] Localdata = new string[size];
 
-       
-            data = new string[size];
+            Localdata = new string[size];
 
             // Store first two lines
-            data[0] = Jumble;
-            data[1] = Arraysize;
+            Localdata[0] = Jumble;
+            Localdata[1] = Arraysize;
 
 
             int i = 2;
             //change hardcode 16 to data.Length for accpet other gamefile content
-            while ((line = sr.ReadLine()) != null && i < data.Length)
+            while ((line = sr.ReadLine()) != null && i < Localdata.Length)
             {
-                data[i] = line;
+                Localdata[i] = line;
                 i++;  // move to next index for next line
             }
 
             //close the file
             sr.Close();
             //Console.ReadLine();
-            Console.WriteLine(data[0]);
-            return data;
+            Console.WriteLine(Localdata[0]);
+            return Localdata;
         }
 
         //Function:RandomGameData
