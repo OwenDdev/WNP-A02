@@ -1,21 +1,77 @@
-﻿<Window x:Class="WDFClient.MainWindow"
+﻿<!--
+* FILE          : MainWindow.xaml
+* PROJECT       : A02 - TCPIP 
+* PROGRAMMER    : Najaf Ali, Che-Ping Chien, Precious Orewen, Yi-Chen Tsai
+* FIRST VERSION : 2026-02-05
+* DESCRIPTION   :
+*      This file contains the XAML markup for the main entry window of the Word Jumble Game client.
+*      It defines a clean, minimalist WPF interface that serves as the game's launch point.
+*      The window features two interchangeable panels:
+*      
+*      Main Menu Panel:
+*      - "Play Game" button that transitions to the login interface
+*      - "Quit" button to exit the application
+*      
+*      Login Panel:
+*      - Text input field for player name entry
+*      - "Start" button to begin the game after name validation
+*      - "Back" button to return to the main menu
+*      
+*      The interface uses a professional color scheme with visual hierarchy and
+*      smooth transitions between panels to guide the user through the initial
+*      game setup process before connecting to the server.
+-->
+
+<Window x:Class="WDFClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WDFClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Label Name ="GameLabel"  Content="SET Jumble" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Width="316" HorizontalContentAlignment="Center" Height="28" FontSize="16"/>
-        <Button Name ="PlayBtn" Content="Play" HorizontalAlignment="Center" Margin="0,144,0,0" VerticalAlignment="Top" Height="29" Width="210" Click="Play_Click"/>
-        <Button Name ="QuitBtn"  Content="Quit" HorizontalAlignment="Center" Margin="0,233,0,0" VerticalAlignment="Top" Height="29" Width="210" Click="Quit_Click"/>
+        Title="Word Jumble" Height="400" Width="500"
+        WindowStartupLocation="CenterScreen"
+        Background="#F0F0F0">
 
-        <Label Name ="Loginlabel" Content="Login" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Width="316" HorizontalContentAlignment="Center" Height="28" FontSize="16" Visibility="Hidden"/>
-        <Button Name ="LoginBtn" Content="Login" HorizontalAlignment="Left" Margin="510,144,0,0" VerticalAlignment="Top" Height="29" Width="85" Click="Login_Click" Visibility="Hidden"/>
-        <Button Name ="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="636,144,0,0" VerticalAlignment="Top" Height="29" Width="85" Click="Back_Click" Visibility="Hidden"/>
-        <TextBox Name ="LoginBox" HorizontalAlignment="Left" Margin="122,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" Height="29" Visibility="Hidden"/>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <!-- Title -->
+        <Label Grid.Row="0" Content="WORD JUMBLE" 
+               HorizontalAlignment="Center" FontSize="28" 
+               FontWeight="Bold" Foreground="#2C3E50" Margin="0,0,0,30"/>
 
+        <!-- Main Menu Panel -->
+        <StackPanel Grid.Row="1" Name="MainMenuPanel" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Name="PlayBtn" Content="Play Game" Width="200" Height="40" 
+                    Background="#27AE60" Foreground="White" FontSize="16" 
+                    FontWeight="Bold" BorderThickness="0" Margin="0,0,0,15"
+                    Click="Play_Click"/>
+            <Button Name="QuitBtn" Content="Quit" Width="200" Height="40" 
+                    Background="#E74C3C" Foreground="White" FontSize="16" 
+                    FontWeight="Bold" BorderThickness="0" Click="Quit_Click"/>
+        </StackPanel>
+
+        <!-- Login Panel -->
+        <StackPanel Grid.Row="1" Name="LoginPanel" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Visibility="Hidden" Width="300">
+            <Label Content="Enter Your Name" HorizontalAlignment="Center" 
+                   FontSize="16" FontWeight="Bold" Foreground="#2C3E50" Margin="0,0,0,10"/>
+            <TextBox Name="LoginBox" Height="35" FontSize="14" Padding="5" 
+                     BorderBrush="#3498DB" BorderThickness="2" Margin="0,0,0,15"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="LoginBtn" Content="Start" Width="100" Height="35" 
+                        Background="#27AE60" Foreground="White" FontWeight="Bold" 
+                        BorderThickness="0" Margin="0,0,10,0" Click="Login_Click"/>
+                <Button Name="BackBtn" Content="Back" Width="100" Height="35" 
+                        Background="#E74C3C" Foreground="White" FontWeight="Bold" 
+                        BorderThickness="0" Click="Back_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
