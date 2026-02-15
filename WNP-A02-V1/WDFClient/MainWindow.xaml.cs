@@ -1,17 +1,5 @@
-﻿using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+﻿using System.Windows;
+using System.Text.RegularExpressions;
 namespace WDFClient
 {
 
@@ -49,8 +37,25 @@ namespace WDFClient
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
+            string PlayerName = LoginBox.Text.Trim();
+            if (string.IsNullOrEmpty(PlayerName))
+            {
+                MessageBox.Show("Player name cannot be empty, please try again");
+                return;
+            }
+            if(PlayerName.Length > 8)
+            {
+                MessageBox.Show("Only enter 8 characters for playername, please try again");
+                return;
+            }
+            if (!Regex.IsMatch(PlayerName, "^[a-zA-Z0-9]*$"))
+            {
+                MessageBox.Show("Invalid name, only letter and number");
+                return;
+            }
             GameWindow GW = new GameWindow();
             GW.Show();
+            Close();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

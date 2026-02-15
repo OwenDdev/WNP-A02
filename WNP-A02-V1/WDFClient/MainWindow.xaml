@@ -14,7 +14,7 @@
         <Label Name ="Loginlabel" Content="Login" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" Width="316" HorizontalContentAlignment="Center" Height="28" FontSize="16" Visibility="Hidden"/>
         <Button Name ="LoginBtn" Content="Login" HorizontalAlignment="Left" Margin="510,144,0,0" VerticalAlignment="Top" Height="29" Width="85" Click="Login_Click" Visibility="Hidden"/>
         <Button Name ="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="636,144,0,0" VerticalAlignment="Top" Height="29" Width="85" Click="Back_Click" Visibility="Hidden"/>
-        <TextBox Name ="LoginBox" HorizontalAlignment="Left" Margin="122,144,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="319" Height="29" Visibility="Hidden"/>
+        <TextBox Name ="LoginBox" HorizontalAlignment="Left" Margin="122,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" Height="29" Visibility="Hidden"/>
 
 
     </Grid>

@@ -7,13 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
+using System.Text.RegularExpressions;
 namespace WDFClient
 {
     /// <summary>
@@ -141,7 +135,17 @@ namespace WDFClient
 
         private async void Guess_Click(object sender, RoutedEventArgs e)
         {
-            string guess = GuessBox.Text;
+            string guess = GuessBox.Text.ToUpper().Trim();
+            if (string.IsNullOrEmpty(guess))
+            {
+                MessageBox.Show("Please enter your guess");
+                return;
+            }
+            if (!Regex.IsMatch(guess, "^[a-zA-Z]*$"))
+            {
+                MessageBox.Show("Please enter letter");
+                return;
+            }
             await Send_message(guess);
         }
 
