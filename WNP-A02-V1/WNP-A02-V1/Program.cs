@@ -68,16 +68,19 @@ namespace WNPA02V1
                     // The data must be converted to a byte array to be used
                     //    by TCP/IP
 
-                    string info;
+                    string response;
                     if (code == 0)
                     {
-                        info = "|" + GameData[1] + "|Jumble";
+                        response = $"{GameData[code]}|{GameData[1]}|Jumble";
+                    }
+                    else if(code == -1)
+                    {
+                        response = "Wrong|TryAgain";
                     }
                     else
                     {
-                        info = "|Found";
+                        response = $"{GameData[code]}|Found";
                     }
-                    string response = GameData[code] + info;
                     byte[] responseBytes = Encoding.UTF8.GetBytes(response);
 
                     await stream.WriteAsync(responseBytes, 0, responseBytes.Length);
@@ -98,21 +101,18 @@ namespace WNPA02V1
 
         private static int determine_response(string message, string[] Gamedata)
         {
-            int code = 0;
-            if (message == "Hello from client!")
+            string clientMessage = message.Trim().ToLower();
+            if (clientMessage.Contains("hello from client"))
             {
-                code = 0;
+                return 0;
             }
-            else
-            {
                 for (int i = 2; i < Gamedata.Length; i++)
                 {
                     if (message == Gamedata[i] ) {
-                        code = i;
+                        return i;
                     }
                 }
-            }
-             return code;
+             return -1;
         }
 
 

@@ -23,7 +23,8 @@ namespace WDFClient
         private Label[] guessLabels2;
 
         private int TotalFound = 0;
-
+        private int currentFound = 0;
+        private List<string> FoundWordsList = new List<string>();
         public GameWindow()
         {
             InitializeComponent();
@@ -64,15 +65,28 @@ namespace WDFClient
 
             string[] info;
             info = response.Split('|');
-            if (info[1] == "Found")
+            //guess right
+            if (info.Length >= 2 && info[1] == "Found")
             {
-                FoundBox.Text = info[0];
+                string keyword = info[0];
 
-                displayFound(TotalFound, info[0]);
+                if (!FoundWordsList.Contains(keyword))
+                {
+                    FoundWordsList.Add(keyword);
+                    FoundBox.Text = keyword;
+                    currentFound++;
+                    Scoredisplay.Content = $"{currentFound}/{TotalFound}";
+                    displayFound(TotalFound, keyword);
+                }
             }
-            else if (info[2] == "Jumble")
+            //new game start
+            else if (info.Length >= 3 && info[2] == "Jumble")
             {
                 int.TryParse(info[1], out TotalFound);
+
+                FoundWordsList.Clear();
+                currentFound = 0;
+                Scoredisplay.Content = $"{currentFound}/{TotalFound}";
                 if (TotalFound <= 10)
                 {
                     GuessSpace10.Visibility = Visibility.Visible;
@@ -87,6 +101,12 @@ namespace WDFClient
                 }
                 Worddisplay.Content = info[0];
             }
+            //guess wrong
+            else
+            {
+                GuessBox.Text = "";
+            }
+
 
             // Console.WriteLine($"Server replied: {response}");
 
